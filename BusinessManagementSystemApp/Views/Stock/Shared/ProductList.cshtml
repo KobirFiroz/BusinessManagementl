@@ -1,0 +1,29 @@
+﻿@model BusinessManagementSystemApp.Models.StockVM
+<table class="table table-striped table-bordered " style=" margin-top:20px">
+    <thead class="table-bordered" style="background-color: forestgreen ;color:white">
+        <tr>
+            <th>SL</th>
+            <th>Product</th>
+
+            <th>Expired Date</th>
+            <th>Expired Quantity</th>
+        </tr>
+    </thead>
+    @if (ViewBag.ExpiredList != null)
+    {
+        <tbody>
+
+            @{ int sl = 1;}
+            @foreach (var product in ViewBag.ExpiredList)
+            {
+                <tr>
+                    <td>@(sl++)</td>
+                    <td>@product.ProductId</td>
+                    <td>@product.ExpireDate</td>
+                    <td>@product.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    }
+
+</table>
